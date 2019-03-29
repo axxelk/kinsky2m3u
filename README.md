@@ -8,4 +8,11 @@ There may be simpler ways using grep/awk/.. but I did it this way. Too anxious t
 - on a Mac you can find your the local created Kinsky Playlists are in ~/Library/Kinsky/Playlists/
 - there are some notes to myself in notes.py
 
+Usage:
 
+    axelk@hopl ~/Documents/src/python/lxml_test:$ ./kinky2m3u.py Playlists/20131013_234941.dpl.6T.dpl > x.m3u
+    converting all Playlists to m3u playlists:
+    axelk@hopl ~/Documents/src/python/lxml_test:$ for file in ./Playlists/*; do ./kinky2m3u.py $file > ./m3us/$(basename $file).m3u; done
+    make one large playlist out of all playlist with no duplicates:
+    axelk@hopl ~/Documents/src/python/lxml_test/m3us:$ cat * > all.m3u
+    axelk@hopl ~/Documents/src/python/lxml_test/m3us:$ cat all.m3u | awk '!x[$0]++'  > kinsky_all3.m3u
