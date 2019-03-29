@@ -59,5 +59,5 @@ axelk@hopl ~/Documents/src/python/lxml_test:$ vi pl1.xml
 '44100'
 
 
-(venv) axelk@hopl ~/Documents/src/python/lxml_test:$ for file in ./Playlists/*; do ./transform.py $file > ./m3us/$(basename $file).m3u; done
+(venv) axelk@hopl ~/Documents/src/python/lxml_test:$ for file in ./Playlists/*; do ./kinsky2m3u.py $file > ./m3us/$(basename $file).m3u; done
 
